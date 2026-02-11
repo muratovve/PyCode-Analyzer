@@ -20,13 +20,13 @@ A tool to analyze, deobfuscate, and inspect potentially malicious Python scripts
 Open your terminal (Command Prompt or PowerShell) and navigate to the project folder:
 
 ```cmd
-cd Desktop\PyCode_Analyzer
+cd Path\to\PyCode_Analyzer
 ```
 
 Install the required libraries:
 
 ```cmd
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 ---
@@ -38,9 +38,9 @@ This launches a local web server where you can upload files and view reports.
 
 1. Start the server:
    ```cmd
-   py -m uvicorn api.main:app --reload --port 8000
+   python -m uvicorn api.main:app --reload --port 8000
    ```
-   *(If `py` doesn't work, try `python` instead)*
+   *(If `python` doesn't work, try `py` instead)*
 
 2. Open your browser and go to:
    **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
@@ -52,7 +52,7 @@ Use this for quick checks or batch processing.
 
 **Analyze a single file:**
 ```cmd
-python main.py samples/your_script.py --save
+python main.py samples/sample_50.py --save
 ```
 
 **Scan an entire folder:**

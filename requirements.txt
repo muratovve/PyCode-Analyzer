@@ -1,0 +1,8 @@
+rich
+fastapi
+uvicorn
+python-multipart
+matplotlib
+aiofiles
+setuptools
+jinja2

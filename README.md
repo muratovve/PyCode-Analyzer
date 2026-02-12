@@ -1,4 +1,4 @@
-# Python Code Analyzer & Deobfuscator
+# Python Code Analyzer
 Analyze suspicious Python scripts: detection score, safe preview, CLI and local web interface
 
 A tool to analyze, deobfuscate, and inspect potentially malicious Python scripts.

@@ -1,4 +1,5 @@
 
-# This file demonstrates exec usage (detected as high risk)
-code = "print('Exec usage detected')"
+# This file demonstrates exec usage
+code = "print('Exec usage')"
 exec(code)
+

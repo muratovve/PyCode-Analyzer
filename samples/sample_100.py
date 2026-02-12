@@ -1,4 +1,4 @@
-# detector_high_risk_test.py
+# high risk test
 # Safe payload: prints a line, but wrapped in all the usual obfuscation-ish patterns.
 
 import base64 as b
@@ -66,3 +66,4 @@ def deep():
                                                                     return 123
 
 deep()
+

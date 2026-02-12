@@ -1,5 +1,5 @@
 """
-TEST SAMPLE – LOOKS SKETCHY BUT SAFE
+TEST SAMPLE – LOOKS SUS BUT SAFE
 No real damage, no shell commands, no data exfiltration.
 """
 
@@ -11,13 +11,13 @@ import subprocess
 import socket
 import urllib.request
 
-# --- goofy variable style ---
+# goofy variable style
 x = 1; y = 2; z = 3; q = 4; w = 5
 
-# --- fake encoded payload (just text) ---
+# fake encoded payload (just text)
 b64_payload = "SGVsbG8sIHRoaXMgaXMgbm90IG1hbHdhcmU="
 
-# decode chain that LOOKS like unpacker
+# decode chain that looks like unpacker
 stage1 = base64.b64decode(b64_payload)
 stage2 = zlib.compress(stage1)        # reversed on purpose
 stage3 = zlib.decompress(stage2)
@@ -31,10 +31,10 @@ name = "".join([chr(c) for c in [112, 114, 105, 110, 116]])  # "print"
 # dynamic builtins call – but only printing
 getattr(__builtins__, name)("nothing bad happened")
 
-# --- rickroll “connection attempt” (harmless GET) ---
+# rickroll connection attempt (harmless GET)
 try:
     rick = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    # just open headers, no download, no execution
+    # just open headers, without download and execution
     req = urllib.request.Request(rick, method="HEAD")
     urllib.request.urlopen(req, timeout=2)
 except Exception:
@@ -64,3 +64,4 @@ noise = "A0x9ZLQ12BNmPqweRtyUIOPlkJHGFDSA"
 net = socket.socket
 
 print("demo finished")
+

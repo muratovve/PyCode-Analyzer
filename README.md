@@ -10,7 +10,7 @@ A tool to analyze, deobfuscate, and inspect potentially malicious Python scripts
 - **Database History**: Keeps track of all your scans in a local database.
 - **Batch Processing**: Scan entire folders at once.
 
-## Windows Installation Guide
+## Installation Guide
 
 ### 1. Prerequisites
 - **Python 3.10 or higher**: Download from [python.org](https://www.python.org/downloads/).
@@ -45,7 +45,7 @@ This launches a local web server where you can upload files and view reports.
 2. Open your browser and go to:
    **[http://127.0.0.1:8000](http://127.0.0.1:8000)**
 
-3. Upload a file or paste code to analyze it!
+3. Upload a file or paste code to analyze it
 
 ### Option 2: Command Line (CLI)
 Use this for quick checks or batch processing.

@@ -34,7 +34,7 @@ class SafeDeobfuscator:
         """Attempt multiple layers of decoding on the input string."""
         preview = ""
         
-        # 1. Base64
+        # Base64
         # We search for the largest suspicious b64-like blob to decode
         b64_pattern = re.compile(r'(?:[A-Za-z0-9+/]{4}){20,}(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?')
         matches = b64_pattern.findall(text)
@@ -60,7 +60,7 @@ class SafeDeobfuscator:
             except Exception:
                 pass
 
-        # 2. Hex (\xNN)
+        # Hex (\xNN)
         # Find long hex strings
         hex_pattern = re.compile(r'(?:\\x[0-9a-fA-F]{2}){10,}')
         hex_matches = hex_pattern.findall(text)
@@ -75,18 +75,10 @@ class SafeDeobfuscator:
             except Exception:
                 pass
 
-        # 3. Simple chr() constants
-        # Identify patterns like chr(65)+chr(66)...
-        # We can implement a safe AST constant folder for this.
-        # extracting chr() calls and evaluating them if args are ints.
         try:
             tree = ast.parse(text)
             char_accum = []
-            
-            # Very naive AST walker to find contiguous chr sequences might be complex, 
-            # let's just regex for `chr(\d+)` sequences to be safe and simple 
-            # as strict AST reconstruction requires preserving order perfectly.
-            # actually, regex is safer here for "preview".
+
             
             chr_matches = list(re.finditer(r'chr\((\d+)\)', text))
             if len(chr_matches) > 5:
@@ -106,3 +98,4 @@ class SafeDeobfuscator:
             pass
 
         return ""
+
